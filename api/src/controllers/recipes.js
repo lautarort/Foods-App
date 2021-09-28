@@ -6,6 +6,107 @@ const axios = require('axios').default;
 const { API_KEY } = process.env;
 
 
+async function getRecipeByName (req, res, next) {
+  const {title} = req.query
+  try {
+    const apiRecipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&query=${title}`)
+    const dbRecipes = await Recipe.findAll({
+      where: {title: 
+        { [Op.iLike]: `%${title}%`}
+      }, include: Diet
+    }
+    )
+   if (dbRecipes.length === 0) {
+       let result = apiRecipes.data.results.slice(0, 9)
+       if (apiRecipes.data.results.length === 0) return res.status(404).send('Invalid search')
+       return res.send(result) 
+   } else {
+    let arrayResponse = []
+    for(let i = 0; i < dbRecipes.length; i++) {
+      let dietsMap = []
+      dbRecipes[i].diets.map((diet) => (
+        dietsMap.push(diet.name)
+      )
+      )
+      let objectResponseDB = {
+        id: dbRecipes[i].id,
+        title: dbRecipes[i].title,
+        summary: dbRecipes[i].summary,
+        spoonacularScore: dbRecipes[i].spoonacularScore,
+        healthScore: dbRecipes[i].healthScore,
+        analyzedInstructions: dbRecipes[i].analyzedInstructions,
+        image: dbRecipes[i].image, 
+        diets: dietsMap
+      }
+    arrayResponse.push(objectResponseDB)
+  } 
+      let totalRecipes = arrayResponse.concat(apiRecipes.data.results)
+      let totalRecipesConcat = totalRecipes.slice(0,9)
+     return res.send(totalRecipesConcat)
+   }
+  } catch (error) {
+    next(error)
+  }
+}
+
+async function getRecipeById (req, res, next) {
+  const {id} = req.params
+  try {
+    if(id.length < 35) {
+      const apiRecipes = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
+      let analyzedInstructionsMap = [] 
+      apiRecipes.data.analyzedInstrucions.map((inst) => (
+        inst.steps?.map((s) => (
+          analyzedInstrucionsMap.push(s.step)
+          ))
+        ))
+        console.log(apiRecipes.data.analyzedInstrucions.steps)
+          let objectResponse = {
+            id: apiRecipes.data.id,
+            vegetarian: apiRecipes.data.vegetarian,
+            vegan: apiRecipes.data.vegan,
+            glutenFree: apiRecipes.data.glutenFree,
+            title: apiRecipes.data.title,
+            image: apiRecipes.data.image,
+            diets: apiRecipes.data.diets,
+            dishTypes: apiRecipes.data.dishTypes,
+            summary: apiRecipes.data.summary,
+            spoonacularScore: apiRecipes.data.spoonacularScore,
+            healthScore: apiRecipes.data.healthScore,
+            analyzedInstructions: analyzedInstructionsMap
+          }
+          if(apiRecipes) return res.send(objectResponse)
+
+    } else {
+      const dbRecipeId = await Recipe.findOne({
+        where : {
+          id: req.params.id
+        },
+        include: Diet
+      })
+      let dietsMap = []
+      dbRecipeId.diets.map((diets) => (
+        dietsMap.push(diet.name)
+      ))
+      let objectResponse = {
+        id: dbRecipeId.id,
+        title: dbRecipeId.title,
+        summary: dbRecipeId.summary,
+        spoonacularScore: dbRecipeId.spoonacularScore,
+        healthScore: dbRecipeId.healthScore,
+        diets: dietsMap,
+        analyzedInstructions: dbRecipeId.analyzedInstructions,
+        image: dbRecipeId.image
+    }
+    
+    if(!dbRecipeId) return res.status(400).send('Invalid ID')
+    return res.send(objectResponse)
+  }
+  } catch(error) {
+    next(error)
+  }
+}
+
 async function getRecipes(req,res, next) {
   try {
     const getRecipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
@@ -69,4 +170,6 @@ const id = uuidv4();
 
 module.exports = {
   getRecipes,
+  getRecipeByName,
+  getRecipeById, 
   postRecipe}
