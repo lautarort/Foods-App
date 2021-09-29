@@ -17,15 +17,15 @@ async function getRecipeByName (req, res, next) {
     }
     )
    if (dbRecipes.length === 0) {
-       let result = apiRecipes.data.results.slice(0, 9)
+       let result = apiRecipes.data.results.slice(0, 9) // los pagino 9 por pag
        if (apiRecipes.data.results.length === 0) return res.status(404).send('Invalid search')
        return res.send(result) 
    } else {
-    let arrayResponse = []
+    let arrayResponse = [] 
     for(let i = 0; i < dbRecipes.length; i++) {
       let dietsMap = []
       dbRecipes[i].diets.map((diet) => (
-        dietsMap.push(diet.name)
+        dietsMap.push(diet.name) // agrego las dietas
       )
       )
       let objectResponseDB = {
@@ -50,11 +50,11 @@ async function getRecipeByName (req, res, next) {
 }
 
 async function getRecipeById (req, res, next) {
-  const {id} = req.params
   try {
-    if(id.length < 35) {
+    const {id} = req.params // recibimos el id por params
+    if(id.length < 35) { //si tiene menos de 35 numeros son de la api
       const apiRecipes = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
-      let analyzedInstructionsMap = [] 
+      let analyzedInstructionsMap = [] // arreglo vacio donde los vamos metiendo
       apiRecipes.data.analyzedInstrucions.map((inst) => (
         inst.steps?.map((s) => (
           analyzedInstrucionsMap.push(s.step)
@@ -78,7 +78,7 @@ async function getRecipeById (req, res, next) {
           if(apiRecipes) return res.send(objectResponse)
 
     } else {
-      const dbRecipeId = await Recipe.findOne({
+      const dbRecipeId = await Recipe.findOne({ // sino estarian en la base de datos porque el uuid es mas largo q  35
         where : {
           id: req.params.id
         },
@@ -109,14 +109,14 @@ async function getRecipeById (req, res, next) {
 
 async function getRecipes(req,res, next) {
   try {
-    const getRecipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`)
-    const dbRecipes = await Recipe.findAll({
+    const getRecipes = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`) //busca todos en la api
+    const dbRecipes = await Recipe.findAll({    //busca todos en la base de datos
       include: Diet
     }); 
-    if(dbRecipes.length === 0) return res.send(getRecipes.data.results)
+    if(dbRecipes.length === 0) return res.send(getRecipes.data.results) // data
     let arrayResponse = [];
   
-    for(let j = 0; j < dbRecipes.length; j++) {
+    for(let j = 0; j < dbRecipes.length; j++) { // le agrego las recetas correspondiente a c/u
         let dietsMap = []
         dbRecipes[j].diets.map((diet) => (
           dietsMap.push(diet.name)
@@ -133,8 +133,8 @@ async function getRecipes(req,res, next) {
         }
       arrayResponse.push(objectResponseDB)
     } 
-    const concatRecipes = arrayResponse.concat(getRecipes.data.results)
-    return res.send(concatRecipes)
+    const concatRecipes = arrayResponse.concat(getRecipes.data.results) //los junto base de datos y api
+    return res.send(concatRecipes) //los respondo
   } catch(error) {
     next(error)
   }
@@ -143,8 +143,8 @@ async function getRecipes(req,res, next) {
 async function postRecipe(req, res) {
 const { title, summary, spoonacularScore, healthScore, analyzedInstructions, image, diets } = req.body; 
 const id = uuidv4();
-  if (!title || !summary) return res.status(404).json({})
-    const newRecipe = await Recipe.create({
+  if (!title || !summary) return res.status(404).json({}) //si no tiene titulo y sumary tiramos error no se puede crear
+    const newRecipe = await Recipe.create({ // creamos receta
             id: id, 
             title: req.body.title,
             summary: req.body.summary,
@@ -154,16 +154,16 @@ const id = uuidv4();
             analyzedInstructions: [req.body.analyzedInstructions]
     }) 
     for(let i = 0; i < diets.length; i++) {
-      await newRecipe.addDiet(diets[i], {through: 'recipe_diet'})
+      await newRecipe.addDiet(diets[i], {through: 'recipe_diet'}) //lo agregamos a la tabla intermedia
     }
-    const recipes_diets = await Recipe.findOne({
+    const recipes_diets = await Recipe.findOne({ 
       where: {
         title: req.body.title
       },
       include: Diet
     })
 
-    return res.json(recipes_diets) 
+    return res.json(recipes_diets) // mandamos el resultado al front
 } 
  
 
