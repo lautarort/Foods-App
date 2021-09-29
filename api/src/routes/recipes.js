@@ -3,6 +3,9 @@ const {getRecipes, getRecipeByName, getRecipeById, postRecipe} = require('../con
 const router = Router();
 
 router.get('/', getRecipes); 
-router.post('/addRecipe', postRecipe); 
+router.post('/search', getRecipeByName);
+router.post('/:id', getRecipeById);
+router.post('/addRecipe', postRecipe);
+
 
 module.exports= router; 
