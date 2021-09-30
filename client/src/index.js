@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux' // nos va a permitir todo
+import store from './Redux/Store/Store'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom' // permite el enrutamiento
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+<BrowserRouter> 
+    <Provider store={store}> 
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
