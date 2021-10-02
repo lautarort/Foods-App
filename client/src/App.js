@@ -12,7 +12,7 @@ function App() {
     
       <Route exact path='/' component={Landing}/> 
       <Route exact path='/home' component={Home}/>
-      <Route path= '/home' component={Nav}/> 
+      {/* <Route path= '/home' component={Nav}/>   */}
 
     </div>
   );
