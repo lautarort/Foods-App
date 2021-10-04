@@ -8,8 +8,8 @@ function Pagination({ recipePerPage, totalRecipes, paginate}) {
         pages.push(i);
     }
     return (
-        <nav>
-            <div>
+        <nav className="nav_page">
+            <div className="pagination">
                 {pages.map((num) => (
                     <button
                     onClick={(e) => paginate(e, num)}>

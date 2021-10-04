@@ -7,7 +7,7 @@ function DisplayRecipes(props) {
     console.log('display', props.recipes.length)
 
     return (
-        <div>
+        <div className='display_recipes'>
             {props.recipes.map((recipe, index) => (
                 <RecipeContainer index={index}  recipe={recipe}/>
             ))}

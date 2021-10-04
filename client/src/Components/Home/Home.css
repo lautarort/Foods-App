@@ -1,0 +1,18 @@
+.container{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+  /* background-image: url('https://imgr.search.brave.com/kohUAlWFTojUGcETsxXaFwr4etT3mW8sJ7-ATfM8lTA/fit/1200/1080/no/1/aHR0cHM6Ly9pbWFn/ZXMud2FsbHBhcGVy/c2NyYWZ0LmNvbS9p/bWFnZS9tb3NhaWNf/cGF0dGVybnNfY29s/b3JmdWxfMTI2NTYw/XzE5MjB4MTA4MC5q/cGc'); */
+}
+
+
+@keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

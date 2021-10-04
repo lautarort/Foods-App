@@ -4,7 +4,7 @@ import Pagination  from '../Pagination/Pagination';
 import FilterOptions from '../FilterOptions/FilterOptions';
 import DisplayRecipes from '../DisplayRecipes/DisplayRecipes';
 import Nav from '../Nav/Nav';
-// import './Home.css'
+import './Home.css'
 
 // useSelector hook para reemplazar mapStateToProps
 // useDispatch hook para reemplazar mapDispatchToProps
@@ -50,19 +50,26 @@ function Home() {
     } // seteo el num de la pagina
 
     return (
-        <div>
-            <>
-            <Nav />
+        <div className="homePage">
+      <div className="container">
+          <>
+          <Nav /> 
             <FilterOptions />
-            <DisplayRecipes recipes={currentPage} />
             <Pagination
-                recipePerPge={recipesPerPage} // 9
-                totalRecipes={allRecipes.length}
-                paginate={paginate} // function
-                />
-            </>
-        </div>
-       
+              recipePerPage={recipesPerPage} // 9
+              totalRecipes={allRecipes.length} 
+              paginate={paginate} // function
+              />
+            <DisplayRecipes recipes={currentPage}/>
+            <Pagination
+              recipePerPage={recipesPerPage} // 9
+              totalRecipes={allRecipes.length} 
+              paginate={paginate} // function
+            
+              />
+          </>
+      </div>
+    </div>
     )
 }
 

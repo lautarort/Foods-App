@@ -1,0 +1,47 @@
+.filter_component{
+    color: #080808;
+    position: relative;
+    /* bottom: 500px; */
+    top: 89px;
+    margin-bottom: 150px;
+    font-family: 'CORMIER';
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 17px;
+    border: 1.2px solid rgba(138, 138, 138, 0.904);
+    background-color: rgba(151, 149, 149, 0.699);
+     
+}
+
+.filter_by select{
+    cursor: pointer;
+    /* box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); */
+    color: #464646;
+    background-image: linear-gradient(to right, #f0efee 0%, #f0efee  51%, #f0efee  100%);
+    font-family: 'CORMIER';
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.filter_by option {
+    color: #464646;
+    font-size: 15px;
+    background:#f1f1f1
+} 
+
+.filter_order select{
+    cursor: pointer;
+    /* box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); */
+    color: #464646;
+    background-image: linear-gradient(to right, #f0efee 0%, #f0efee  51%, #f0efee  100%);
+    font-family: 'CORMIER';
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.filter_order option {
+    color: #464646;
+    font-size: 15px;
+    background:#ffffff
+}

@@ -1,17 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import recipe from '../../img/recipe.jpg'
-// import './RecipeContainer.css'
+import './RecipeContainer.css'
 
 export default function RecipeContainer (props) {
     console.log('recipeContainer', props.recipe)
     return (
-        <div>
-            <h1>{ props.recipe.title }</h1>
-            <div>
+        <div className='card_container'>
+            <h1 className='card_title'>{ props.recipe.title }</h1>
+            <div className='image'>
             <img src={props.recipe.image ? props.recipe.image : `${recipe} `} alt="pingo" />
             </div>
-                <div>
+                <div className="diets_card">
                     {props.recipe.diets?.map((diet, index) => (
                         <span>
                             <p>
@@ -21,7 +21,7 @@ export default function RecipeContainer (props) {
                     ))}
                 </div>
                 <Link to={`/recipe/${props.recipe.id}`}>
-                    <button type='submit'>More...</button>
+                    <button className="button_card" type='submit'>More...</button>
                 </Link>
             
         </div>

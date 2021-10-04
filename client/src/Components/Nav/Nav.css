@@ -1,0 +1,118 @@
+.container-nav{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+    background-color: rgb(56, 56, 56) ;
+    box-shadow: 0 0 5px rgb(70, 70, 70);
+    height: 96px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav_logo{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: fixed;
+    left: 30px;
+    top: -10px;
+    max-height: 100px;
+}
+
+.nav_logo:hover{
+    transform: scale(1.1);
+    transition: transform .5s ease;
+}
+
+.box_search{
+    font-family: 'cormier';
+    opacity: 1;
+    animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: static;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    transition: transform 250ms;
+    right: 680px;
+    bottom: 658px;
+    width: 155px;
+    height: 25px;
+    border-radius: 3px;
+    /* box-shadow: 0 2px 5px rgb(90, 88, 88); */
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    
+}
+
+.box_search:hover{
+    background-image: linear-gradient(to right, #f7f1f1 0%, #ffffff  51%, #dfdfdf  100%);
+    transform: translateY(-5px);
+}
+
+.search_button {
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    right: 640px;
+    bottom: 658px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgb(255, 123, 0);
+    transition: transform 250ms;
+}
+
+.search_button:hover{
+    background-color: rgb(255, 208, 0);
+    transform: translateY(-5px);
+}
+
+
+.create_button{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+    position: static;
+    right: 100px;
+    bottom: 658px;
+    width: 96px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'cormier';
+    cursor: pointer;
+    background-image: linear-gradient(to right, #fd8d0d 0%, #f7882d  51%, #fc7608  100%);
+    transition: transform 250ms;
+    font-size: 15px;
+    text-align: center;
+    /* box-shadow: 0 2px 5px rgb(90, 88, 88); */
+}
+
+.create_button:hover{
+    background-image: linear-gradient(to right, #e6e209 0%, #dad625  51%, #c5c328 100%);
+    transform: translateY(-5px);
+}

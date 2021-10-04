@@ -1,0 +1,142 @@
+.card_container{
+    animation: fadeIn ease 0.5s;
+    -webkit-animation: fadeIn ease 0.5s;
+    -moz-animation: fadeIn ease 0.5s;
+    -o-animation: fadeIn ease 0.5s;
+    -ms-animation: fadeIn ease 0.5s;
+    margin-top: 160px;
+   position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 360px;
+    height: 433px;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.849);
+    /* border-radius: 0px; */
+    margin: 32px;
+    border: 1.3px solid rgb(0, 0, 0);
+    color: #111111;
+}
+ 
+.image img {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 63px; 
+    /* border-radius: 0px; */
+    border: 1.1px solid rgba(0, 0, 0, 0.986);
+    height: 144px;
+    width: 233px;
+    object-fit: cover;
+    object-position: center center;
+
+}
+
+.card_title{
+    text-transform: capitalize;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+    justify-content: space-evenly;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    font-size: 25px;
+    font-family: 'cormier';
+   
+}
+
+.diets_card{
+  color: #070707;
+    text-align: justify;
+    font-family: 'cormier';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 21px;
+    bottom: 50px;
+    margin: 10px;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-evenly;
+    -webkit-align-items: center;
+    -webkit-flex-wrap: wrap;
+    
+}
+
+.diets_card span{
+    font-size: 12px;
+    margin: 0.5px;
+    border: 0.3px solid rgba(0, 0, 0, 0.4);
+    padding: 0px 4px;
+    margin-right: 3px;
+    margin-bottom: 13px;
+    border-radius: 2px;
+    background-color: rgb(253, 150, 32);
+    /* box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); */
+
+}
+
+.button_card{
+    font-family: 'cormier';
+    background-image: linear-gradient(to right, #f74343 0%, #ff2626  51%, #fc0202  100%);
+    font-size: 15px;
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: transform 250ms;
+}
+
+.button_card:hover{
+    background-image: linear-gradient(to right, #c01818 0%, #b30b0b  51%, #c50505 100%);
+   transition: transform .3s ease;
+   /* transform: scale(1.1); */
+}
+
+@keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
