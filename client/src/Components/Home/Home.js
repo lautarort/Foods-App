@@ -55,11 +55,11 @@ function Home() {
           <>
           <Nav /> 
             <FilterOptions />
-            <Pagination
+            {/* <Pagination
               recipePerPage={recipesPerPage} // 9
               totalRecipes={allRecipes.length} 
               paginate={paginate} // function
-              />
+              /> */}
             <DisplayRecipes recipes={currentPage}/>
             <Pagination
               recipePerPage={recipesPerPage} // 9

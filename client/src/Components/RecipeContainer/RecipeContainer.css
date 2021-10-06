@@ -13,7 +13,7 @@
     width: 360px;
     height: 433px;
     text-align: center;
-    background-color: rgba(245, 245, 245, 0.849);
+    background-color: rgba(209, 184, 184, 0.849);
     /* border-radius: 0px; */
     margin: 32px;
     border: 1.3px solid rgb(0, 0, 0);
@@ -80,7 +80,7 @@
 
 .button_card{
     font-family: 'cormier';
-    background-image: linear-gradient(to right, #f74343 0%, #ff2626  51%, #fc0202  100%);
+    background-image: linear-gradient(to right, #721b1b 0%, #721b1b  51%, #721b1b  100%);
     font-size: 15px;
     position: absolute;
     right: 13px;
@@ -91,7 +91,7 @@
 }
 
 .button_card:hover{
-    background-image: linear-gradient(to right, #c01818 0%, #b30b0b  51%, #c50505 100%);
+    background-image: linear-gradient(to right, #721b1b 0%, #721b1b  51%, #721b1b 100%);
    transition: transform .3s ease;
    /* transform: scale(1.1); */
 }
