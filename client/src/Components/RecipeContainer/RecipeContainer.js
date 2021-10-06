@@ -9,7 +9,7 @@ export default function RecipeContainer (props) {
         <div className='card_container'>
             <h1 className='card_title'>{ props.recipe.title }</h1>
             <div className='image'>
-            <img src={props.recipe.image ? props.recipe.image : `${recipe} `} alt="pingo" />
+            <img src={props.recipe.image ? props.recipe.image : `${recipe} `} alt="name" />
             </div>
                 <div className="diets_card">
                     {props.recipe.diets?.map((diet, index) => (

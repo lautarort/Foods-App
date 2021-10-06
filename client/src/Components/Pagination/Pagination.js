@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Pagination.css'
+import './Pagination.css'
 
 function Pagination({ recipePerPage, totalRecipes, paginate}) {
     const pages = [];
@@ -12,7 +12,8 @@ function Pagination({ recipePerPage, totalRecipes, paginate}) {
             <div className="pagination">
                 {pages.map((num) => (
                     <button
-                    onClick={(e) => paginate(e, num)}>
+                    onClick={(e) => paginate(e, num)}
+                        className="page_button">
                     {num}
                     </button>
                 ))}
