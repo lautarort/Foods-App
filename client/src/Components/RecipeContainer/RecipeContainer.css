@@ -14,7 +14,7 @@
     height: 433px;
     text-align: center;
     background-color: rgba(209, 184, 184, 0.849);
-    /* border-radius: 0px; */
+    border-radius: 5px;
     margin: 32px;
     border: 1.3px solid rgb(0, 0, 0);
     color: #111111;
@@ -23,15 +23,15 @@
 .image img {
     display: block;
     position: absolute;
-    top: 80px;
+    top: 85px;
     left: 63px; 
-    /* border-radius: 0px; */
-    border: 1.1px solid rgba(0, 0, 0, 0.986);
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.986);
     height: 144px;
     width: 233px;
     object-fit: cover;
     object-position: center center;
-
+    box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); 
 }
 
 .card_title{
@@ -43,20 +43,22 @@
     -webkit-align-items: flex-end;
     align-items: flex-end;
     font-size: 25px;
-    font-family: 'cormier';
+    font-family: 'Arial';
    
 }
 
 .diets_card{
-  color: #070707;
+    color: black;
     text-align: justify;
-    font-family: 'cormier';
+    font-family: 'Arial';
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 21px;
-    bottom: 50px;
+    border-radius: 5px;
+    left: 25px;
+    right: 25px;
+    bottom: 35px;
     margin: 10px;
     flex-wrap: wrap;
     -webkit-justify-content: space-evenly;
@@ -66,21 +68,22 @@
 }
 
 .diets_card span{
-    font-size: 12px;
+    font-size: 11px;
     margin: 0.5px;
     border: 0.3px solid rgba(0, 0, 0, 0.4);
     padding: 0px 4px;
-    margin-right: 3px;
-    margin-bottom: 13px;
+    margin-right: 8px;
+    margin-bottom: 27px;
     border-radius: 2px;
-    background-color: rgb(253, 150, 32);
-    /* box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); */
+    /* background-color: rgb(89, 81, 110); */
+    box-shadow: 3px 3px 5px rgb(20 20 20 / 80%); 
 
 }
 
 .button_card{
     font-family: 'cormier';
-    background-image: linear-gradient(to right, #721b1b 0%, #721b1b  51%, #721b1b  100%);
+    color: black;
+    background-image: linear-gradient(to right, #571c1c 0%, #571c1c  51%, #571c1c  100%);
     font-size: 15px;
     position: absolute;
     right: 13px;
@@ -91,7 +94,7 @@
 }
 
 .button_card:hover{
-    background-image: linear-gradient(to right, #721b1b 0%, #721b1b  51%, #721b1b 100%);
+    background-image: linear-gradient(to right, #811f1f 0%, #811f1f  51%, #811f1f 100%);
    transition: transform .3s ease;
    /* transform: scale(1.1); */
 }

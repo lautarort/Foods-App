@@ -17,10 +17,7 @@ function Home() {
     const {filterBy} = useSelector((state) => state);
     const {orderBy} = useSelector((state) => state);
 
-     const [allRecipes, setAllRecipes] = useState([])
-     const [page, setPage] = useState(1);
-     const [recipesPerPage] = useState(9);
-
+    
     //cada vez que el estado cambie la pag se vuelve a renderizar
     useEffect(() => {
         if(filterBy === 'All' && orderBy === 'Select') {
@@ -28,12 +25,15 @@ function Home() {
         } else {
             setAllRecipes(filteredRecipes.slice())
         }
-         // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[filterBy, orderBy, recipes])
-
+    
     console.log(recipes)
-
+    
     // PAGINATION
+    const [allRecipes, setAllRecipes] = useState([])
+    const [page, setPage] = useState(1);
+    const [recipesPerPage] = useState(9);
     
     // indice del úlitmo elemento de cada pagina
     let indexLastPage = page * recipesPerPage;

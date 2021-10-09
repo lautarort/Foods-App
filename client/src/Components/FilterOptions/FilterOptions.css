@@ -9,8 +9,8 @@
     align-items: center;
     justify-content: space-evenly;
     font-size: 17px;
-    border: 1.2px solid rgba(138, 138, 138, 0.904);
-    background-color: rgba(151, 149, 149, 0.699);
+    /* border: 1.2px solid rgba(138, 138, 138, 0.904); */
+    background-color: rgba(151, 149, 149, 0);
      
 }
 

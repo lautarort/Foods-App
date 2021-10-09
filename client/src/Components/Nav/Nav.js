@@ -4,7 +4,7 @@ import { NavLink} from 'react-router-dom';
 import './Nav.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
-import {  searchRecipes } from '../../Redux/Actions/recipesActions';
+import { searchRecipes } from '../../Redux/Actions/recipesActions';
 import { getRecipes} from '../../Redux/Actions/recipesActions';
 import { reset } from '../../Redux/Actions/orderActions';
 import logo from '../../img/logo.png'
@@ -30,7 +30,7 @@ export default function Nav() {
                 className='nav_logo'
                 src= {logo}
                 alt='Logo'
-                onClick={(e) => dispatch(reset())}
+               onClick={(e) => dispatch(reset())}
                 onClick={(e) => dispatch(getRecipes())}
                />
                </NavLink>
