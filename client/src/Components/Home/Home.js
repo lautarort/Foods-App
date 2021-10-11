@@ -34,6 +34,7 @@ function Home() {
     const [allRecipes, setAllRecipes] = useState([])
     const [page, setPage] = useState(1);
     const [recipesPerPage] = useState(9);
+
     
     // indice del úlitmo elemento de cada pagina
     let indexLastPage = page * recipesPerPage;
@@ -46,7 +47,7 @@ function Home() {
 
     function paginate(e, num) {
         e.preventDefault();
-        setPage(num);
+         setPage(num);
     } // seteo el num de la pagina
 
     return (

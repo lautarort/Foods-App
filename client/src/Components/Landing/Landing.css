@@ -4,7 +4,7 @@
      background-image:
     url('https://imgr.search.brave.com/cJOYaK7isX9UjJewMrsSxoSrQ_0FOHp86bUqVpYH-3g/fit/1200/1200/no/1/aHR0cDovL3d3dy5h/bGxzdGF0ZWxvZ2hv/bWVzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxNy8xMC9r/aXRjaGVuLWRlc2ln/bi1jb2xvci15ZWxs/b3cuanBn');
    background-size: cover; 
-   background-position: center 70%;
+   background-position: center 100%;
    overflow:hidden;
    width: 110vw;
    height: 100vh; 
@@ -19,17 +19,17 @@
     animation-duration: 0.5s;
     background-image: linear-gradient(to right, #fdf90d 0%, #f7f32d  51%, #d1ce2d  100%);
 
-       margin: 10px;
+       margin: 10px, auto;
        padding: 10px 35px;
        text-align: center;
        text-transform: uppercase;
        transition: 0.5s;
        background-size: 200% auto;
        color: white;            
-       box-shadow: 0 0 20px rgb(168, 167, 167);
+       box-shadow: 0 0 20px rgb(8, 8, 8);
        border-radius: 5px;
        display: flex;
-       align-items: center;
+        align-items: center; 
        justify-content: center;
        position: absolute;
        right: 600px;

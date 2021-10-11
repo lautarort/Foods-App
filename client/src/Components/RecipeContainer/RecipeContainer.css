@@ -18,6 +18,7 @@
     margin: 32px;
     border: 1.3px solid rgb(0, 0, 0);
     color: #111111;
+    box-shadow: 3px 3px 5px rgb(20 20 20 / 80%);
 }
  
 .image img {

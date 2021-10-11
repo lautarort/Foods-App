@@ -10,7 +10,7 @@ function RecipeDetail({match}) {
   const recipe = useSelector((state) => state.recipeById)
   const dispatch = useDispatch(); 
 
-    useEffect(() => {
+    useEffect(() => { 
         console.log("useEffect")
         dispatch(getRecipeDetail(match.params.id))
         // eslint-disable-next-line react-hooks/exhaustive-deps

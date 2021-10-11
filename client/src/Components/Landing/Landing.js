@@ -16,7 +16,7 @@ function Landing() {
 
     return (
         <div className='landing_container'>
-        <h1 className= 'welcome_text'>BestRecipes</h1>
+        <h1 className= 'welcome_text'>Loves Food</h1>
         <button className='button_home'><Link to='/home' className='link_text'> START </Link></button>
         </div>
     )
