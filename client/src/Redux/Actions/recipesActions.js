@@ -11,9 +11,9 @@ export const POST_NEW_RECIPE = 'POST_NEW_RECIPE';
 // para utilizar una funcion asincrona
 // llamamos al back, pedimos info, cuando llegue info dispatchamos accion
 export function getRecipes() {
-    return (dispatch) => // arrow funcion 
+    return (dispatch) => 
       fetch('http://localhost:3001/recipes') // hago pedido al back
-        .then((response) => response.json()) // una promesa 
+        .then((response) => response.json()) //  
         .then((json) => {
             console.log(json) 
             // cuando tenemos la data queremos dispatchar la accion

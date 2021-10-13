@@ -3,7 +3,9 @@
     align-items: center;
     justify-content: center;
     margin-top: 80px;
-    /* background-image: ; */
+    background-size: cover; 
+   background-position: center 100%;
+     background-image: url("https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2006/10/2/1/tullis_209kitchen2.jpg.rend.hgtvcom.966.725.suffix/1400939911594.jpeg");
 }
 
 .danger{
