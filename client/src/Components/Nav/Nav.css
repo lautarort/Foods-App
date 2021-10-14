@@ -1,9 +1,9 @@
 .container-nav{
     opacity: 1;
-	animation-name: fadeInOpacity;
+	/* animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
+	animation-duration: 0.5s; */
     background-color: rgb(56, 56, 56) ;
     box-shadow: 0 0 5px rgb(70, 70, 70);
     height: 96px;
@@ -24,9 +24,9 @@
 
 .nav_logo{
     opacity: 1;
-	animation-name: fadeInOpacity;
+	/* animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
+	animation-timing-function: ease-in; */
 	animation-duration: 2s;
     position: fixed;
     left: 30px;
@@ -42,10 +42,10 @@
 .box_search{
     font-family: 'cormier';
     opacity: 1;
-    animation-name: fadeInOpacity;
+    /* animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+	animation-duration: 2s; */
     position: static;
     display: inline-block;
     justify-content: center;
@@ -70,10 +70,10 @@
 
 .search_button {
     opacity: 1;
-	animation-name: fadeInOpacity;
+	/* animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+	animation-duration: 2s; */
     right: 640px;
     bottom: 658px;
     width: 35px;
@@ -92,9 +92,9 @@
 
 .create_button{
     opacity: 1;
-	animation-name: fadeInOpacity;
+	/* animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
+	animation-timing-function: ease-in; */
 	animation-duration: 2s;
     position: static;
     right: 100px;

@@ -35,7 +35,7 @@ export default function Nav() {
                />
                </NavLink>
                <div className='form'> 
-           <form onSubmit={((e) =>  (e))}>
+               <form onSubmit={((e) => handleSubmit(e))}>
                <input 
                className="box_search"
                name='search'  
